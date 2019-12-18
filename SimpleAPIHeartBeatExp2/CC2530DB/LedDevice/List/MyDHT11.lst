@@ -1,0 +1,785 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.1.10194/W32 for 8051         13/Dec/2019  16:31:31 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects #
+#                          \zstack\Samples\SimpleAPIHeartBeatExp2\CC2530DB\Dh #
+#                          t11\MyDHT11.C                                      #
+#    Command line       =  -f "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Proj #
+#                          ects\zstack\Samples\SimpleAPIHeartBeatExp2\CC2530D #
+#                          B\..\..\..\Tools\CC2530DB\f8wEndev.cfg"            #
+#                          (-DCPU32MHZ -DROOT=__near_func                     #
+#                          -DMAC_CFG_TX_DATA_MAX=3 -DMAC_CFG_TX_MAX=6         #
+#                          -DMAC_CFG_RX_MAX=3) -f "C:\Texas                   #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\SimpleAPIHeartBeatExp2\CC2530DB\..\..\..\To #
+#                          ols\CC2530DB\f8wConfig.cfg" (-DZIGBEEPRO           #
+#                          -DSECURE=0 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR       #
+#                          -DDEFAULT_CHANLIST=0x00000800                      #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFFFF                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DLINK_STATUS_JITTER_MASK=0x007F                   #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116                           #
+#                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const     #
+#                          __code" -DGENERIC=__generic                        #
+#                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=1000        #
+#                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100)   #
+#                          -DREJOIN_POLL_RATE=440 "C:\Texas                   #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\SimpleAPIHeartBeatExp2\CC2530DB\Dht11\MyDHT #
+#                          11.C" -D NWK_AUTO_POLL -D ZTOOL_P2 -D              #
+#                          RFD_RCVC_ALWAYS_ON=TRUE -D xMT_TASK -D             #
+#                          xMT_SYS_FUNC -D MT_ZDO_FUNC -D                     #
+#                          xLCD_SUPPORTED=DEBUG -D xPOWER_SAVING -lC          #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Project #
+#                          s\zstack\Samples\SimpleAPIHeartBeatExp2\CC2530DB\L #
+#                          edDevice\List\" -lA "C:\Texas                      #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\SimpleAPIHeartBeatExp2\CC2530DB\LedDevice\L #
+#                          ist\" --diag_suppress Pe001,Pa010 -o "C:\Texas     #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\SimpleAPIHeartBeatExp2\CC2530DB\LedDevice\O #
+#                          bj\" -e --no_code_motion --debug --core=plain      #
+#                          --dptr=16,1 --data_model=large                     #
+#                          --code_model=banked --calling_convention=xdata_ree #
+#                          ntrant --place_constants=data_rom                  #
+#                          --nr_virtual_regs 16 -I "C:\Texas                  #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\SimpleAPIHeartBeatExp2\CC2530DB\" -I        #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Project #
+#                          s\zstack\Samples\SimpleAPIHeartBeatExp2\CC2530DB\. #
+#                          .\Source\" -I "C:\Texas Instruments\ZStack-CC2530- #
+#                          2.5.1a\Projects\zstack\Samples\SimpleAPIHeartBeatE #
+#                          xp2\CC2530DB\..\..\..\ZMain\TI2530DB\" -I          #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Project #
+#                          s\zstack\Samples\SimpleAPIHeartBeatExp2\CC2530DB\. #
+#                          .\..\..\..\..\Components\hal\include\" -I          #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Project #
+#                          s\zstack\Samples\SimpleAPIHeartBeatExp2\CC2530DB\. #
+#                          .\..\..\..\..\Components\hal\target\CC2530EB\" -I  #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Project #
+#                          s\zstack\Samples\SimpleAPIHeartBeatExp2\CC2530DB\. #
+#                          .\..\..\..\..\Components\mac\include\" -I          #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Project #
+#                          s\zstack\Samples\SimpleAPIHeartBeatExp2\CC2530DB\. #
+#                          .\..\..\..\..\Components\mac\high_level\" -I       #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Project #
+#                          s\zstack\Samples\SimpleAPIHeartBeatExp2\CC2530DB\. #
+#                          .\..\..\..\..\Components\mac\low_level\srf04\" -I  #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Project #
+#                          s\zstack\Samples\SimpleAPIHeartBeatExp2\CC2530DB\. #
+#                          .\..\..\..\..\Components\mac\low_level\srf04\singl #
+#                          e_chip\" -I "C:\Texas Instruments\ZStack-CC2530-2. #
+#                          5.1a\Projects\zstack\Samples\SimpleAPIHeartBeatExp #
+#                          2\CC2530DB\..\..\..\..\..\Components\mt\" -I       #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Project #
+#                          s\zstack\Samples\SimpleAPIHeartBeatExp2\CC2530DB\. #
+#                          .\..\..\..\..\Components\osal\include\" -I         #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Project #
+#                          s\zstack\Samples\SimpleAPIHeartBeatExp2\CC2530DB\. #
+#                          .\..\..\..\..\Components\services\saddr\" -I       #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Project #
+#                          s\zstack\Samples\SimpleAPIHeartBeatExp2\CC2530DB\. #
+#                          .\..\..\..\..\Components\services\sdata\" -I       #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Project #
+#                          s\zstack\Samples\SimpleAPIHeartBeatExp2\CC2530DB\. #
+#                          .\..\..\..\..\Components\stack\af\" -I "C:\Texas   #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\SimpleAPIHeartBeatExp2\CC2530DB\..\..\..\.. #
+#                          \..\Components\stack\nwk\" -I "C:\Texas            #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\SimpleAPIHeartBeatExp2\CC2530DB\..\..\..\.. #
+#                          \..\Components\stack\sapi\" -I "C:\Texas           #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\SimpleAPIHeartBeatExp2\CC2530DB\..\..\..\.. #
+#                          \..\Components\stack\sec\" -I "C:\Texas            #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\SimpleAPIHeartBeatExp2\CC2530DB\..\..\..\.. #
+#                          \..\Components\stack\sys\" -I "C:\Texas            #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\SimpleAPIHeartBeatExp2\CC2530DB\..\..\..\.. #
+#                          \..\Components\stack\zdo\" -I "C:\Texas            #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\SimpleAPIHeartBeatExp2\CC2530DB\..\..\..\.. #
+#                          \..\Components\zmac\" -I "C:\Texas                 #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\SimpleAPIHeartBeatExp2\CC2530DB\..\..\..\.. #
+#                          \..\Components\zmac\f8w\" -I "C:\Texas             #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\SimpleAPIHeartBeatExp1\CC2530DB\Dht11\"     #
+#                          -Ohz --require_prototypes                          #
+#    List file          =  C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects #
+#                          \zstack\Samples\SimpleAPIHeartBeatExp2\CC2530DB\Le #
+#                          dDevice\List\MyDHT11.lst                           #
+#    Object file        =  C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects #
+#                          \zstack\Samples\SimpleAPIHeartBeatExp2\CC2530DB\Le #
+#                          dDevice\Obj\MyDHT11.r51                            #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\SimpleAPIHeartBeatExp2\CC2530DB\Dht11\MyDHT11.C
+      1          #include "hal_mcu.h"
+
+   \                                 In  segment SFR_AN, at 0x80
+   \   union <unnamed> volatile __sfr _A_P0
+   \                     _A_P0:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xfd
+   \   unsigned char volatile __sfr P0DIR
+   \                     P0DIR:
+   \   000000                DS 1
+      2          #include "Mydht11.h"
+      3          #include "OnBoard.h"
+      4          
+      5          
+      6          //温湿度定义
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+      7          uint8 uint8FLAG,uint8temp;
+   \                     uint8FLAG:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+   \                     uint8temp:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+      8          uint8 uint8T_data_H,uint8T_data_L,uint8RH_data_H,uint8RH_data_L,uint8checkdata;
+   \                     uint8T_data_H:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+   \                     uint8T_data_L:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+   \                     uint8RH_data_H:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+   \                     uint8RH_data_L:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+   \                     uint8checkdata:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+      9          uint8 uint8T_data_H_temp,uint8T_data_L_temp,uint8RH_data_H_temp,uint8RH_data_L_temp,uint8checkdata_temp;
+   \                     uint8T_data_H_temp:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+   \                     uint8T_data_L_temp:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+   \                     uint8RH_data_H_temp:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+   \                     uint8RH_data_L_temp:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+   \                     uint8checkdata_temp:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     10          uint8 uint8comdata;
+   \                     uint8comdata:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     11          uint8 dht11Temp,dht11Humidity;
+   \                     dht11Temp:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+   \                     dht11Humidity:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     12          uint8 dht11TempDec,dht11HumidityDec;
+   \                     dht11TempDec:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+   \                     dht11HumidityDec:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+     13          
+     14          void Delay_us(void);
+     15          void Delay_10us(void);
+     16          void Delay_ms(uint16 Time);
+     17          void COM(void);
+     18          void readDHT11(void);
+     19          
+     20          /****************************
+     21                  延时函数
+     22          *****************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     23          void Delay_us(void) //1 us延时
+   \                     Delay_us:
+     24          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+     25              MicroWait(1);   
+   \   000004                ; Setup parameters for call to function Onboard_wait
+   \   000004   7A01         MOV     R2,#0x1
+   \   000006                REQUIRE ?Subroutine0
+   \   000006                ; // Fall through to label ?Subroutine0
+     26          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   7B00         MOV     R3,#0x0
+   \   000002   12....       LCALL   ??Onboard_wait?relay
+   \   000005                REQUIRE ??Subroutine5_0
+   \   000005                ; // Fall through to label ??Subroutine5_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine5_0:
+   \   000000   D083         POP     DPH
+   \   000002   D082         POP     DPL
+   \   000004   02....       LJMP    ?BRET
+     27          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     28          void Delay_10us(void) //10 us延时
+   \                     Delay_10us:
+     29          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+     30            MicroWait(10);   
+   \   000004                ; Setup parameters for call to function Onboard_wait
+   \   000004   7A0A         MOV     R2,#0xa
+   \   000006   80..         SJMP    ?Subroutine0
+     31          }
+     32          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     33          void Delay_ms(uint16 Time)//n ms延时
+   \                     Delay_ms:
+     34          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+     35            unsigned char i;
+     36            while(Time--)
+   \                     ??Delay_ms_0:
+   \   000009   EE           MOV     A,R6
+   \   00000A   F8           MOV     R0,A
+   \   00000B   EF           MOV     A,R7
+   \   00000C   F9           MOV     R1,A
+   \   00000D   E8           MOV     A,R0
+   \   00000E   24FF         ADD     A,#-0x1
+   \   000010   1E           DEC     R6
+   \   000011   E9           MOV     A,R1
+   \   000012   34FF         ADDC    A,#-0x1
+   \   000014   FF           MOV     R7,A
+   \   000015   E8           MOV     A,R0
+   \   000016   49           ORL     A,R1
+   \   000017   6012         JZ      ??Delay_ms_1
+     37            {
+     38              for(i=0;i<100;i++)
+   \   000019   75..64       MOV     ?V0 + 0,#0x64
+     39               Delay_10us();
+   \                     ??Delay_ms_2:
+   \   00001C                ; Setup parameters for call to function Onboard_wait
+   \   00001C   7A0A         MOV     R2,#0xa
+   \   00001E   7B00         MOV     R3,#0x0
+   \   000020   12....       LCALL   ??Onboard_wait?relay
+   \   000023   15..         DEC     ?V0 + 0
+   \   000025   E5..         MOV     A,?V0 + 0
+   \   000027   60E0         JZ      ??Delay_ms_0
+   \   000029   80F1         SJMP    ??Delay_ms_2
+     40            }
+     41          }
+   \                     ??Delay_ms_1:
+   \   00002B                REQUIRE ?Subroutine1
+   \   00002B                ; // Fall through to label ?Subroutine1
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine1:
+   \   000000   7F01         MOV     R7,#0x1
+   \   000002   02....       LJMP    ?BANKED_LEAVE_XDATA
+     42          
+     43          
+     44          /***********************
+     45             温湿度传感
+     46          ***********************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     47          void COM(void)	// 温湿写入
+   \                     COM:
+     48          {     
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+     49            uint8 i;         
+     50            for(i=0;i<8;i++)    
+   \   000005   7E08         MOV     R6,#0x8
+     51            {
+     52              uint8FLAG=2; 
+   \                     ??COM_0:
+   \   000007   90....       MOV     DPTR,#uint8FLAG
+   \   00000A   7402         MOV     A,#0x2
+   \   00000C   F0           MOVX    @DPTR,A
+     53              while((!DHT_PIN)&&uint8FLAG++);
+   \                     ??COM_1:
+   \   00000D   A286         MOV     C,0x80.6
+   \   00000F   4005         JC      ??COM_2
+   \   000011   12....       LCALL   ?Subroutine4 & 0xFFFF
+   \                     ??CrossCallReturnLabel_2:
+   \   000014   70F7         JNZ     ??COM_1
+     54              Delay_10us();
+   \                     ??COM_2:
+   \   000016                ; Setup parameters for call to function Onboard_wait
+   \   000016   12....       LCALL   ?Subroutine3 & 0xFFFF
+     55              Delay_10us();
+     56              Delay_10us();
+     57              uint8temp=0;
+   \                     ??CrossCallReturnLabel_0:
+   \   000019   90....       MOV     DPTR,#uint8temp
+   \   00001C   E4           CLR     A
+   \   00001D   F0           MOVX    @DPTR,A
+     58              if(DHT_PIN)uint8temp=1;
+   \   00001E   A286         MOV     C,0x80.6
+   \   000020   5002         JNC     ??COM_3
+   \   000022   04           INC     A
+   \   000023   F0           MOVX    @DPTR,A
+     59              uint8FLAG=2;
+   \                     ??COM_3:
+   \   000024   90....       MOV     DPTR,#uint8FLAG
+   \   000027   7402         MOV     A,#0x2
+   \   000029   F0           MOVX    @DPTR,A
+     60              while((DHT_PIN)&&uint8FLAG++);   
+   \                     ??COM_4:
+   \   00002A   A286         MOV     C,0x80.6
+   \   00002C   5005         JNC     ??COM_5
+   \   00002E   12....       LCALL   ?Subroutine4 & 0xFFFF
+   \                     ??CrossCallReturnLabel_3:
+   \   000031   70F7         JNZ     ??COM_4
+     61              if(uint8FLAG==1)break;    
+   \                     ??COM_5:
+   \   000033   E0           MOVX    A,@DPTR
+   \   000034   6401         XRL     A,#0x1
+   \   000036   601B         JZ      ??COM_6
+     62              uint8comdata<<=1;
+     63              uint8comdata|=uint8temp; 
+   \   000038   90....       MOV     DPTR,#uint8temp
+   \   00003B   C082         PUSH    DPL
+   \   00003D   90....       MOV     DPTR,#uint8comdata
+   \   000040   E0           MOVX    A,@DPTR
+   \   000041   C3           CLR     C
+   \   000042   33           RLC     A
+   \   000043   7583..       MOV     DPH,#(uint8temp >> 8) & 0xff
+   \   000046   D082         POP     DPL
+   \   000048   F8           MOV     R0,A
+   \   000049   E0           MOVX    A,@DPTR
+   \   00004A   48           ORL     A,R0
+   \   00004B   90....       MOV     DPTR,#uint8comdata
+   \   00004E   F0           MOVX    @DPTR,A
+     64            }    
+   \   00004F   1E           DEC     R6
+   \   000050   EE           MOV     A,R6
+   \   000051   70B4         JNZ     ??COM_0
+     65          }
+   \                     ??COM_6:
+   \   000053   80..         SJMP    ?Subroutine1
+   \   000055                REQUIRE _A_P0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine4:
+   \   000000   E0           MOVX    A,@DPTR
+   \   000001   F8           MOV     R0,A
+   \   000002   7401         MOV     A,#0x1
+   \   000004   28           ADD     A,R0
+   \   000005   F0           MOVX    @DPTR,A
+   \   000006   E8           MOV     A,R0
+   \   000007   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine3:
+   \   000000   7A0A         MOV     R2,#0xa
+   \   000002   7B00         MOV     R3,#0x0
+   \   000004   12....       LCALL   ??Onboard_wait?relay
+   \   000007                ; Setup parameters for call to function Onboard_wait
+   \   000007                ; Setup parameters for call to function Onboard_wait
+   \   000007   7A0A         MOV     R2,#0xa
+   \   000009   7B00         MOV     R3,#0x0
+   \   00000B   12....       LCALL   ??Onboard_wait?relay
+   \   00000E                ; Setup parameters for call to function Onboard_wait
+   \   00000E                ; Setup parameters for call to function Onboard_wait
+   \   00000E   7A0A         MOV     R2,#0xa
+   \   000010   7B00         MOV     R3,#0x0
+   \   000012   12....       LCALL   ??Onboard_wait?relay
+   \   000015   22           RET
+     66          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     67          void readDHT11(void)   //温湿传感启动
+   \                     readDHT11:
+     68          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+     69            P0DIR |= 0x40; //IO口需要重新配置 
+   \   000004   43FD40       ORL     0xfd,#0x40
+     70            DHT_PIN=0;
+   \   000007   C286         CLR     0x80.6
+     71            Delay_ms(19);  //>18MS
+   \   000009                ; Setup parameters for call to function Delay_ms
+   \   000009   7A13         MOV     R2,#0x13
+   \   00000B   7B00         MOV     R3,#0x0
+   \   00000D   12....       LCALL   ??Delay_ms?relay
+     72            DHT_PIN=1; 
+   \   000010   D286         SETB    0x80.6
+     73            P0DIR &= ~0x40; //重新配置IO口方向
+   \   000012   53FDBF       ANL     0xfd,#0xbf
+     74            Delay_10us();
+   \   000015                ; Setup parameters for call to function Onboard_wait
+   \   000015   12....       LCALL   ?Subroutine3 & 0xFFFF
+     75            Delay_10us();						
+     76            Delay_10us();
+     77            Delay_10us();  
+   \                     ??CrossCallReturnLabel_1:
+   \   000018                ; Setup parameters for call to function Onboard_wait
+   \   000018   7A0A         MOV     R2,#0xa
+   \   00001A   7B00         MOV     R3,#0x0
+   \   00001C   12....       LCALL   ??Onboard_wait?relay
+     78            
+     79            if(!DHT_PIN) 
+   \   00001F   A286         MOV     C,0x80.6
+   \   000021   5003         JNC     $+5
+   \   000023   02....       LJMP    ??readDHT11_0 & 0xFFFF
+     80            {
+     81              uint8FLAG=2; 
+   \   000026   90....       MOV     DPTR,#uint8FLAG
+   \   000029   7402         MOV     A,#0x2
+   \   00002B   F0           MOVX    @DPTR,A
+     82              while((!DHT_PIN)&&uint8FLAG++);
+   \                     ??readDHT11_1:
+   \   00002C   A286         MOV     C,0x80.6
+   \   00002E   4005         JC      ??readDHT11_2
+   \   000030   12....       LCALL   ?Subroutine4 & 0xFFFF
+   \                     ??CrossCallReturnLabel_4:
+   \   000033   70F7         JNZ     ??readDHT11_1
+     83              uint8FLAG=2;
+   \                     ??readDHT11_2:
+   \   000035   7402         MOV     A,#0x2
+   \   000037   F0           MOVX    @DPTR,A
+     84              while((DHT_PIN)&&uint8FLAG++); 
+   \                     ??readDHT11_3:
+   \   000038   A286         MOV     C,0x80.6
+   \   00003A   5005         JNC     ??readDHT11_4
+   \   00003C   12....       LCALL   ?Subroutine4 & 0xFFFF
+   \                     ??CrossCallReturnLabel_5:
+   \   00003F   70F7         JNZ     ??readDHT11_3
+     85              COM();
+   \                     ??readDHT11_4:
+   \   000041                ; Setup parameters for call to function COM
+   \   000041   12....       LCALL   ??Subroutine6_0 & 0xFFFF
+     86              uint8RH_data_H_temp=uint8comdata;
+   \                     ??CrossCallReturnLabel_10:
+   \   000044   90....       MOV     DPTR,#uint8RH_data_H_temp
+   \   000047   12....       LCALL   ?Subroutine2 & 0xFFFF
+     87              COM();
+     88              uint8RH_data_L_temp=uint8comdata;
+   \                     ??CrossCallReturnLabel_6:
+   \   00004A   90....       MOV     DPTR,#uint8RH_data_L_temp
+   \   00004D   12....       LCALL   ?Subroutine2 & 0xFFFF
+     89              COM();
+     90              uint8T_data_H_temp=uint8comdata;
+   \                     ??CrossCallReturnLabel_7:
+   \   000050   90....       MOV     DPTR,#uint8T_data_H_temp
+   \   000053   12....       LCALL   ?Subroutine2 & 0xFFFF
+     91              COM();
+     92              uint8T_data_L_temp=uint8comdata;
+   \                     ??CrossCallReturnLabel_8:
+   \   000056   90....       MOV     DPTR,#uint8T_data_L_temp
+   \   000059   12....       LCALL   ?Subroutine2 & 0xFFFF
+     93              COM();
+     94              uint8checkdata_temp=uint8comdata;
+   \                     ??CrossCallReturnLabel_9:
+   \   00005C   90....       MOV     DPTR,#uint8checkdata_temp
+   \   00005F   F0           MOVX    @DPTR,A
+     95              DHT_PIN=1; 
+   \   000060   D286         SETB    0x80.6
+     96              uint8temp=(uint8T_data_H_temp+uint8T_data_L_temp+uint8RH_data_H_temp+uint8RH_data_L_temp);
+   \   000062   90....       MOV     DPTR,#uint8RH_data_L_temp
+   \   000065   C082         PUSH    DPL
+   \   000067   C083         PUSH    DPH
+   \   000069   90....       MOV     DPTR,#uint8RH_data_H_temp
+   \   00006C   C082         PUSH    DPL
+   \   00006E   C083         PUSH    DPH
+   \   000070   90....       MOV     DPTR,#uint8T_data_L_temp
+   \   000073   C082         PUSH    DPL
+   \   000075   90....       MOV     DPTR,#uint8T_data_H_temp
+   \   000078   E0           MOVX    A,@DPTR
+   \   000079   7583..       MOV     DPH,#(uint8T_data_L_temp >> 8) & 0xff
+   \   00007C   D082         POP     DPL
+   \   00007E   F8           MOV     R0,A
+   \   00007F   E0           MOVX    A,@DPTR
+   \   000080   28           ADD     A,R0
+   \   000081   D083         POP     DPH
+   \   000083   D082         POP     DPL
+   \   000085   F8           MOV     R0,A
+   \   000086   E0           MOVX    A,@DPTR
+   \   000087   28           ADD     A,R0
+   \   000088   D083         POP     DPH
+   \   00008A   D082         POP     DPL
+   \   00008C   F8           MOV     R0,A
+   \   00008D   E0           MOVX    A,@DPTR
+   \   00008E   28           ADD     A,R0
+   \   00008F   90....       MOV     DPTR,#uint8temp
+   \   000092   F0           MOVX    @DPTR,A
+     97              if(uint8temp==uint8checkdata_temp)
+   \   000093   F8           MOV     R0,A
+   \   000094   90....       MOV     DPTR,#uint8checkdata_temp
+   \   000097   E0           MOVX    A,@DPTR
+   \   000098   68           XRL     A,R0
+   \   000099   7028         JNZ     ??readDHT11_5
+     98              {
+     99                uint8RH_data_H=uint8RH_data_H_temp;
+   \   00009B   90....       MOV     DPTR,#uint8RH_data_H_temp
+   \   00009E   E0           MOVX    A,@DPTR
+   \   00009F   90....       MOV     DPTR,#uint8RH_data_H
+   \   0000A2   F0           MOVX    @DPTR,A
+    100                uint8RH_data_L=uint8RH_data_L_temp;
+   \   0000A3   90....       MOV     DPTR,#uint8RH_data_L_temp
+   \   0000A6   E0           MOVX    A,@DPTR
+   \   0000A7   90....       MOV     DPTR,#uint8RH_data_L
+   \   0000AA   F0           MOVX    @DPTR,A
+    101                uint8T_data_H=uint8T_data_H_temp;
+   \   0000AB   90....       MOV     DPTR,#uint8T_data_H_temp
+   \   0000AE   E0           MOVX    A,@DPTR
+   \   0000AF   90....       MOV     DPTR,#uint8T_data_H
+   \   0000B2   F0           MOVX    @DPTR,A
+    102                uint8T_data_L=uint8T_data_L_temp;
+   \   0000B3   90....       MOV     DPTR,#uint8T_data_L_temp
+   \   0000B6   E0           MOVX    A,@DPTR
+   \   0000B7   90....       MOV     DPTR,#uint8T_data_L
+   \   0000BA   F0           MOVX    @DPTR,A
+    103                uint8checkdata=uint8checkdata_temp;
+   \   0000BB   90....       MOV     DPTR,#uint8checkdata_temp
+   \   0000BE   E0           MOVX    A,@DPTR
+   \   0000BF   90....       MOV     DPTR,#uint8checkdata
+   \   0000C2   F0           MOVX    @DPTR,A
+    104              }
+    105              dht11Temp = uint8T_data_H; 
+   \                     ??readDHT11_5:
+   \   0000C3   90....       MOV     DPTR,#uint8T_data_H
+   \   0000C6   E0           MOVX    A,@DPTR
+   \   0000C7   90....       MOV     DPTR,#dht11Temp
+   \   0000CA   F0           MOVX    @DPTR,A
+    106              dht11TempDec = uint8T_data_L;
+   \   0000CB   90....       MOV     DPTR,#uint8T_data_L
+   \   0000CE   E0           MOVX    A,@DPTR
+   \   0000CF   90....       MOV     DPTR,#dht11TempDec
+   \   0000D2   F0           MOVX    @DPTR,A
+    107              dht11Humidity = uint8RH_data_H;     
+   \   0000D3   90....       MOV     DPTR,#uint8RH_data_H
+   \   0000D6   E0           MOVX    A,@DPTR
+   \   0000D7   90....       MOV     DPTR,#dht11Humidity
+   \   0000DA   F0           MOVX    @DPTR,A
+    108              dht11HumidityDec = uint8RH_data_L; 
+   \   0000DB   90....       MOV     DPTR,#uint8RH_data_L
+   \   0000DE   E0           MOVX    A,@DPTR
+   \   0000DF   800D         SJMP    ??readDHT11_6
+    109            } 
+    110            else //没有成功读取，返回0
+    111            {
+    112              dht11Temp = 0; 
+   \                     ??readDHT11_0:
+   \   0000E1   90....       MOV     DPTR,#dht11Temp
+   \   0000E4   E4           CLR     A
+   \   0000E5   F0           MOVX    @DPTR,A
+    113              dht11TempDec = 0;
+   \   0000E6   90....       MOV     DPTR,#dht11TempDec
+   \   0000E9   F0           MOVX    @DPTR,A
+    114              dht11Humidity = 0;
+   \   0000EA   90....       MOV     DPTR,#dht11Humidity
+   \   0000ED   F0           MOVX    @DPTR,A
+    115              dht11HumidityDec = 0;
+   \                     ??readDHT11_6:
+   \   0000EE   90....       MOV     DPTR,#dht11HumidityDec
+   \   0000F1   F0           MOVX    @DPTR,A
+    116            } 
+    117          }
+   \   0000F2   02....       LJMP    ??Subroutine5_0 & 0xFFFF
+   \   0000F5                REQUIRE P0DIR
+   \   0000F5                REQUIRE _A_P0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine2:
+   \   000000   F0           MOVX    @DPTR,A
+   \   000001                ; Setup parameters for call to function COM
+   \   000001                ; Setup parameters for call to function COM
+   \   000001                ; Setup parameters for call to function COM
+   \   000001                ; Setup parameters for call to function COM
+   \   000001                REQUIRE ??Subroutine6_0
+   \   000001                ; // Fall through to label ??Subroutine6_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine6_0:
+   \   000000   12....       LCALL   ??COM?relay
+   \   000003   90....       MOV     DPTR,#uint8comdata
+   \   000006   E0           MOVX    A,@DPTR
+   \   000007   22           RET
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Delay_us?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Delay_us
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Delay_10us?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Delay_10us
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Delay_ms?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Delay_ms
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??COM?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    COM
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??readDHT11?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    readDHT11
+
+   Maximum stack usage in bytes:
+
+     Function          ISTACK PSTACK XSTACK
+     --------          ------ ------ ------
+     COM                   2      0      9
+       -> Onboard_wait     0      0     18
+       -> Onboard_wait     0      0     18
+       -> Onboard_wait     0      0     18
+     Delay_10us            2      0      0
+       -> Onboard_wait     4      0      0
+     Delay_ms              0      0      9
+       -> Onboard_wait     0      0     18
+     Delay_us              2      0      0
+       -> Onboard_wait     4      0      0
+     readDHT11             8      0      0
+       -> Delay_ms         4      0      0
+       -> Onboard_wait     4      0      0
+       -> Onboard_wait     4      0      0
+       -> Onboard_wait     4      0      0
+       -> Onboard_wait     4      0      0
+       -> COM              4      0      0
+       -> COM              4      0      0
+       -> COM              4      0      0
+       -> COM              4      0      0
+       -> COM              4      0      0
+
+
+   Segment part sizes:
+
+     Function/Label      Bytes
+     --------------      -----
+     _A_P0                  1
+     P0DIR                  1
+     uint8FLAG              1
+     uint8temp              1
+     uint8T_data_H          1
+     uint8T_data_L          1
+     uint8RH_data_H         1
+     uint8RH_data_L         1
+     uint8checkdata         1
+     uint8T_data_H_temp     1
+     uint8T_data_L_temp     1
+     uint8RH_data_H_temp    1
+     uint8RH_data_L_temp    1
+     uint8checkdata_temp    1
+     uint8comdata           1
+     dht11Temp              1
+     dht11Humidity          1
+     dht11TempDec           1
+     dht11HumidityDec       1
+     Delay_us               6
+     ?Subroutine0           5
+     ??Subroutine5_0        7
+     Delay_10us             8
+     Delay_ms              43
+     ?Subroutine1           5
+     COM                   85
+     ?Subroutine4           8
+     ?Subroutine3          22
+     readDHT11            245
+     ?Subroutine2           1
+     ??Subroutine6_0        8
+     ??Delay_us?relay       6
+     ??Delay_10us?relay     6
+     ??Delay_ms?relay       6
+     ??COM?relay            6
+     ??readDHT11?relay      6
+
+ 
+ 443 bytes in segment BANKED_CODE
+  30 bytes in segment BANK_RELAYS
+   2 bytes in segment SFR_AN
+  17 bytes in segment XDATA_Z
+ 
+ 473 bytes of CODE  memory
+   0 bytes of DATA  memory (+ 2 bytes shared)
+  17 bytes of XDATA memory
+
+Errors: none
+Warnings: none

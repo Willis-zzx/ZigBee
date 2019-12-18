@@ -1,0 +1,255 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.1.10194/W32 for 8051         17/Dec/2019  11:49:19 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects #
+#                          \zstack\Samples\SimpleAPIHeartBeatExp2\Source\adc. #
+#                          c                                                  #
+#    Command line       =  -f "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Proj #
+#                          ects\zstack\Samples\SimpleAPIHeartBeatExp2\CC2530D #
+#                          B\..\..\..\Tools\CC2530DB\f8wCoord.cfg"            #
+#                          (-DCPU32MHZ -DROOT=__near_func                     #
+#                          -DMAC_CFG_APP_PENDING_QUEUE=TRUE                   #
+#                          -DMAC_CFG_TX_DATA_MAX=5 -DMAC_CFG_TX_MAX=8         #
+#                          -DMAC_CFG_RX_MAX=5 -DZDO_COORDINATOR -DRTR_NWK)    #
+#                          -f "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Proj #
+#                          ects\zstack\Samples\SimpleAPIHeartBeatExp2\CC2530D #
+#                          B\..\..\..\Tools\CC2530DB\f8wConfig.cfg"           #
+#                          (-DZIGBEEPRO -DSECURE=0 -DZG_SECURE_DYNAMIC=0      #
+#                          -DREFLECTOR -DDEFAULT_CHANLIST=0x00000800          #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFFFF                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DLINK_STATUS_JITTER_MASK=0x007F                   #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116                           #
+#                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const     #
+#                          __code" -DGENERIC=__generic                        #
+#                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=1000        #
+#                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100)   #
+#                          -DREJOIN_POLL_RATE=440 "C:\Texas                   #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\SimpleAPIHeartBeatExp2\Source\adc.c" -D     #
+#                          ZTOOL_P2 -D xMT_TASK -D xMT_SYS_FUNC -D            #
+#                          xMT_ZDO_FUNC -D xLCD_SUPPORTED=DEBUG -lC           #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Project #
+#                          s\zstack\Samples\SimpleAPIHeartBeatExp2\CC2530DB\C #
+#                          oordinatorEB\List\" -lA "C:\Texas                  #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\SimpleAPIHeartBeatExp2\CC2530DB\Coordinator #
+#                          EB\List\" --diag_suppress Pe001,Pa010 -o           #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Project #
+#                          s\zstack\Samples\SimpleAPIHeartBeatExp2\CC2530DB\C #
+#                          oordinatorEB\Obj\" -e --no_code_motion --debug     #
+#                          --core=plain --dptr=16,1 --data_model=large        #
+#                          --code_model=banked --calling_convention=xdata_ree #
+#                          ntrant --place_constants=data_rom                  #
+#                          --nr_virtual_regs 16 -I "C:\Texas                  #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\SimpleAPIHeartBeatExp2\CC2530DB\" -I        #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Project #
+#                          s\zstack\Samples\SimpleAPIHeartBeatExp2\CC2530DB\. #
+#                          .\Source\" -I "C:\Texas Instruments\ZStack-CC2530- #
+#                          2.5.1a\Projects\zstack\Samples\SimpleAPIHeartBeatE #
+#                          xp2\CC2530DB\..\..\..\ZMain\TI2530DB\" -I          #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Project #
+#                          s\zstack\Samples\SimpleAPIHeartBeatExp2\CC2530DB\. #
+#                          .\..\..\..\..\Components\hal\include\" -I          #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Project #
+#                          s\zstack\Samples\SimpleAPIHeartBeatExp2\CC2530DB\. #
+#                          .\..\..\..\..\Components\hal\target\CC2530EB\" -I  #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Project #
+#                          s\zstack\Samples\SimpleAPIHeartBeatExp2\CC2530DB\. #
+#                          .\..\..\..\..\Components\mac\include\" -I          #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Project #
+#                          s\zstack\Samples\SimpleAPIHeartBeatExp2\CC2530DB\. #
+#                          .\..\..\..\..\Components\mac\high_level\" -I       #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Project #
+#                          s\zstack\Samples\SimpleAPIHeartBeatExp2\CC2530DB\. #
+#                          .\..\..\..\..\Components\mac\low_level\srf04\" -I  #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Project #
+#                          s\zstack\Samples\SimpleAPIHeartBeatExp2\CC2530DB\. #
+#                          .\..\..\..\..\Components\mac\low_level\srf04\singl #
+#                          e_chip\" -I "C:\Texas Instruments\ZStack-CC2530-2. #
+#                          5.1a\Projects\zstack\Samples\SimpleAPIHeartBeatExp #
+#                          2\CC2530DB\..\..\..\..\..\Components\mt\" -I       #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Project #
+#                          s\zstack\Samples\SimpleAPIHeartBeatExp2\CC2530DB\. #
+#                          .\..\..\..\..\Components\osal\include\" -I         #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Project #
+#                          s\zstack\Samples\SimpleAPIHeartBeatExp2\CC2530DB\. #
+#                          .\..\..\..\..\Components\services\saddr\" -I       #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Project #
+#                          s\zstack\Samples\SimpleAPIHeartBeatExp2\CC2530DB\. #
+#                          .\..\..\..\..\Components\services\sdata\" -I       #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Project #
+#                          s\zstack\Samples\SimpleAPIHeartBeatExp2\CC2530DB\. #
+#                          .\..\..\..\..\Components\stack\af\" -I "C:\Texas   #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\SimpleAPIHeartBeatExp2\CC2530DB\..\..\..\.. #
+#                          \..\Components\stack\nwk\" -I "C:\Texas            #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\SimpleAPIHeartBeatExp2\CC2530DB\..\..\..\.. #
+#                          \..\Components\stack\sapi\" -I "C:\Texas           #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\SimpleAPIHeartBeatExp2\CC2530DB\..\..\..\.. #
+#                          \..\Components\stack\sec\" -I "C:\Texas            #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\SimpleAPIHeartBeatExp2\CC2530DB\..\..\..\.. #
+#                          \..\Components\stack\sys\" -I "C:\Texas            #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\SimpleAPIHeartBeatExp2\CC2530DB\..\..\..\.. #
+#                          \..\Components\stack\zdo\" -I "C:\Texas            #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\SimpleAPIHeartBeatExp2\CC2530DB\..\..\..\.. #
+#                          \..\Components\zmac\" -I "C:\Texas                 #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\SimpleAPIHeartBeatExp2\CC2530DB\..\..\..\.. #
+#                          \..\Components\zmac\f8w\" -Ohz                     #
+#                          --require_prototypes                               #
+#    List file          =  C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects #
+#                          \zstack\Samples\SimpleAPIHeartBeatExp2\CC2530DB\Co #
+#                          ordinatorEB\List\adc.lst                           #
+#    Object file        =  C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects #
+#                          \zstack\Samples\SimpleAPIHeartBeatExp2\CC2530DB\Co #
+#                          ordinatorEB\Obj\adc.r51                            #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\SimpleAPIHeartBeatExp2\Source\adc.c
+      1          #include "adc.h"
+      2          #include "OnBoard.h"
+
+   \                                 In  segment SFR_AN, at 0x88
+   \   union <unnamed> volatile __sfr _A_TCON
+   \                     _A_TCON:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xb6
+   \   unsigned char volatile __sfr ADCCON3
+   \                     ADCCON3:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xba
+   \   unsigned char volatile __sfr ADCL
+   \                     ADCL:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xbb
+   \   unsigned char volatile __sfr ADCH
+   \                     ADCH:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf2
+   \   unsigned char volatile __sfr APCFG
+   \                     APCFG:
+   \   000000                DS 1
+      3          #include "ioCC2530.h"
+      4          #include <stdio.h>
+      5          #define ADC_CHNN  0x05  //选用通道5 P0_5
+      6          #define uchar unsigned char 
+      7          #define uint unsigned int
+      8          void Get_ADCValue(unsigned char* AvgValue);
+      9          /********************************************************
+     10           * @brief   读取ADC的值
+     11          ********************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     12          void readAdc(uint8 *D,uint8 *G,uint8 channal)
+   \                     readAdc:
+     13          {
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 0
+     14                    
+     15                   
+     16                    APCFG |= 1 << channal ; // 模拟信号设置
+   \   000005   75..01       MOV     ?V0 + 0,#0x1
+   \   000008   75..00       MOV     ?V0 + 1,#0x0
+   \   00000B   E9           MOV     A,R1
+   \   00000C   78..         MOV     R0,#?V0 + 0
+   \   00000E   12....       LCALL   ?S_SHL
+   \   000011   E5..         MOV     A,?V0 + 0
+   \   000013   42F2         ORL     0xf2,A
+     17                    ADCIF = 0 ;
+   \   000015   C28D         CLR     0x88.5
+     18                   
+     19                    ADCCON3 = channal;          
+   \   000017   89B6         MOV     0xb6,R1
+     20                    while ( !ADCIF ) ;  //等待转换完成
+   \                     ??readAdc_0:
+   \   000019   A28D         MOV     C,0x88.5
+   \   00001B   50FC         JNC     ??readAdc_0
+     21                    
+     22                    *D = ADCL ;
+   \   00001D   E5BA         MOV     A,0xba
+   \   00001F   8A82         MOV     DPL,R2
+   \   000021   8B83         MOV     DPH,R3
+   \   000023   F0           MOVX    @DPTR,A
+     23                    *D |= ADCH ;
+   \   000024   45BB         ORL     A,0xbb
+   \   000026   F0           MOVX    @DPTR,A
+     24                    
+     25                    //return value; 
+     26          }
+   \   000027   7F02         MOV     R7,#0x2
+   \   000029   02....       LJMP    ?BANKED_LEAVE_XDATA
+   \   00002C                REQUIRE APCFG
+   \   00002C                REQUIRE _A_TCON
+   \   00002C                REQUIRE ADCCON3
+   \   00002C                REQUIRE ADCL
+   \   00002C                REQUIRE ADCH
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??readAdc?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    readAdc
+
+   Maximum stack usage in bytes:
+
+     Function ISTACK PSTACK XSTACK
+     -------- ------ ------ ------
+     readAdc      1      0     10
+
+
+   Segment part sizes:
+
+     Function/Label  Bytes
+     --------------  -----
+     _A_TCON            1
+     ADCCON3            1
+     ADCL               1
+     ADCH               1
+     APCFG              1
+     readAdc           44
+     ??readAdc?relay    6
+
+ 
+ 44 bytes in segment BANKED_CODE
+  6 bytes in segment BANK_RELAYS
+  5 bytes in segment SFR_AN
+ 
+ 50 bytes of CODE memory
+  0 bytes of DATA memory (+ 5 bytes shared)
+
+Errors: none
+Warnings: none
